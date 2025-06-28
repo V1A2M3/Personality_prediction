@@ -15,7 +15,7 @@ test_file = st.file_uploader("📁 Upload Test CSV", type=["csv"])
 
 if train_file is not None and test_file is not None:
     # Load training data
-    data = pd.read_csv(train dataset)
+    data = pd.read_csv("train dataset.csv")
 
     # Preprocess training data
     le = LabelEncoder()
@@ -37,7 +37,7 @@ if train_file is not None and test_file is not None:
     st.success("✅ Model trained successfully!")
 
     # Load and preprocess test data
-    test_data = pd.read_csv(test dataset)
+    test_data = pd.read_csv("test dataset.csv")
     test_data['Gender'] = le.transform(test_data['Gender'])  # use same encoder
     test_data[input_cols] = scaler.transform(test_data[input_cols])
 
